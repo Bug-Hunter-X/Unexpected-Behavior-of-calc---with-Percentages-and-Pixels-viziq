@@ -1,0 +1,9 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `calc()` function with percentages and other units:
+
+```css
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+This seems straightforward, but it can lead to unexpected results if the parent element's width is not explicitly defined or is itself calculated dynamically. The issue stems from the order of operations within `calc()`. The browser first calculates the percentage (50% of the parent's width), then subtracts the 10px. If the parent's width is unknown or changes, the calculation becomes unreliable, potentially resulting in the element exceeding its container or having an unexpected size.
