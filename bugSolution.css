@@ -1,0 +1,13 @@
+The solution involves ensuring the parent element has an explicitly defined width. Here's how you can modify the CSS to fix this:
+
+```css
+.parent {
+  width: 500px; /* Explicit width for the parent */
+}
+
+.element {
+  width: calc(50% - 10px);
+}
+```
+
+By providing a fixed width to the parent element, the browser can accurately compute the 50% and the subtraction, yielding the expected result for the child element.  Alternatively, if the parent's width must remain dynamic, consider avoiding mixing percentages and fixed units within `calc()` or using a different layout method like flexbox or grid which handle dynamic sizing more gracefully.
